@@ -1,0 +1,177 @@
+<div class="addContainer">
+  <div class="modalHeader">
+    <div class="editRowModal">
+      <div class="modalHeader clearfix">
+        <!-- <img [src]="doctors.image" alt="avatar" /> -->
+        <div class="modal-about">
+          {{ dialogTitle }}
+        </div>
+      </div>
+    </div>
+    <button
+      mat-icon-button
+      (click)="dialogRef.close()"
+      class="modal-close-button"
+      aria-label="Close dialog"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div mat-dialog-content>
+    <form class="register-form m-4" [formGroup]="doctorsForm">
+      <!-- (ngSubmit)="submit()" -->
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width mb-3" appearance="outline">
+            <mat-label>Date In English</mat-label>
+            <mat-select formControlName="date" required>
+              <mat-option *ngFor="let item of daysOfTheWeek" [value]="item">
+                {{ item }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="doctorsForm.get('date')?.hasError('required')">
+              Date is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width mb-3" appearance="outline">
+            <mat-label>Date In Arabic</mat-label>
+            <mat-select formControlName="dateAr" required>
+              <mat-option *ngFor="let item of daysOfTheWeekAr" [value]="item">
+                {{ item }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="doctorsForm.get('dateAr')?.hasError('required')">
+              Date is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Start Time in English</mat-label>
+            <input
+              matInput
+              formControlName="start_time"
+              placeholder="HH:MM Format and 24 Hours"
+              required
+            />
+            <mat-icon class="material-icons-two-tone color-icon p-3" matSuffix
+              >schedule</mat-icon
+            >
+            <mat-error
+              *ngIf="doctorsForm.get('start_time')?.hasError('required')"
+            >
+              Start Time is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Start Time in Arabic</mat-label>
+            <input
+              matInput
+              formControlName="start_timeAr"
+              placeholder="HH:MM Format and 24 Hours"
+              required
+            />
+            <mat-icon class="material-icons-two-tone color-icon p-3" matSuffix
+              >schedule</mat-icon
+            >
+            <mat-error
+              *ngIf="doctorsForm.get('start_timeAr')?.hasError('required')"
+            >
+              Start Time is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>End Time in English</mat-label>
+            <input
+              matInput
+              formControlName="end_time"
+              placeholder="HH:MM Format and 24 Hours"
+              required
+            />
+            <mat-icon class="material-icons-two-tone color-icon p-3" matSuffix
+              >schedule</mat-icon
+            >
+            <mat-error
+              *ngIf="doctorsForm.get('end_time')?.hasError('required')"
+            >
+              end Time is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>End Time in Arabic</mat-label>
+            <input
+              matInput
+              formControlName="end_timeAr"
+              placeholder="HH:MM Format and 24 Hours"
+              required
+            />
+            <mat-icon class="material-icons-two-tone color-icon p-3" matSuffix
+              >schedule</mat-icon
+            >
+            <mat-error
+              *ngIf="doctorsForm.get('end_timeAr')?.hasError('required')"
+            >
+              end Time is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-5">
+          <mat-form-field class="example-full-width mb-3" appearance="outline">
+            <mat-label>doctor</mat-label>
+            <mat-select formControlName="doctor_id" required>
+              <mat-option *ngFor="let item of doctor" [value]="item.id">
+                {{ item.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error
+              *ngIf="doctorsForm.get('doctor_id')?.hasError('required')"
+            >
+              doctor is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+          <div class="example-button-row">
+            <button
+              mat-raised-button
+              color="primary"
+              [disabled]="!doctorsForm.valid"
+              type="submit"
+              [mat-dialog-close]="1"
+              (click)="confirmAdd()"
+            >
+              Save
+            </button>
+            <button
+              mat-raised-button
+              color="warn"
+              tabindex="-1"
+              (click)="onNoClick()"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

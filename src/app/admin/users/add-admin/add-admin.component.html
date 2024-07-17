@@ -1,0 +1,167 @@
+<section class="content">
+  <div class="content-block">
+    <div class="block-header">
+      <!-- breadcrumb -->
+      <app-breadcrumb
+        [title]="'Add Admin'"
+        [items]="['Admins']"
+        [active_item]="'Add Admin'"
+      ></app-breadcrumb>
+    </div>
+    <div class="row clearfix">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+          <div class="header">
+            <h2>Add Admins</h2>
+          </div>
+          <div class="body">
+            <form
+              class="m-4"
+              [formGroup]="registerForm"
+              (ngSubmit)="onSubmit()"
+            >
+              <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field
+                    class="example-full-width mb-3"
+                    appearance="outline"
+                  >
+                    <mat-label>FirstName</mat-label>
+                    <input matInput formControlName="first_name" required />
+                    <mat-error
+                      *ngIf="
+                        registerForm.get('first_name')?.hasError('required')
+                      "
+                    >
+                      FirstName is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field
+                    class="example-full-width mb-3"
+                    appearance="outline"
+                  >
+                    <mat-label>LastName</mat-label>
+                    <input matInput formControlName="last_name" required />
+                    <mat-error
+                      *ngIf="
+                        registerForm.get('last_name')?.hasError('required')
+                      "
+                    >
+                      LastName is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field
+                    class="example-full-width mb-3"
+                    appearance="outline"
+                  >
+                    <mat-label>whatsApp</mat-label>
+                    <input
+                      matInput
+                      formControlName="whatsApp"
+                      type="text"
+                      required
+                    />
+                    <!-- <mat-error
+                      *ngIf="registerForm.get('whatsApp')?.hasError('required')"
+                    >
+                      whatsapp is required
+                    </mat-error> -->
+                  </mat-form-field>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field
+                    class="example-full-width mb-3"
+                    appearance="outline"
+                  >
+                    <mat-label>Phone</mat-label>
+                    <input
+                      matInput
+                      formControlName="mobile"
+                      type="text"
+                      required
+                    />
+                    <mat-error
+                      *ngIf="registerForm.get('mobile')?.hasError('required')"
+                    >
+                      mobile is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+                  <label>Gender : </label>
+                  <mat-radio-group formControlName="gender">
+                    <mat-radio-button value="male">male</mat-radio-button>
+                    <mat-radio-button value="female">female</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field
+                    class="example-full-width mb-3"
+                    appearance="outline"
+                  >
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" />
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field
+                    class="example-full-width mb-3"
+                    appearance="outline"
+                  >
+                    <mat-label>Password</mat-label>
+                    <input
+                      matInput
+                      formControlName="password"
+                      type="password"
+                    />
+                  </mat-form-field>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field
+                    class="example-full-width mb-3"
+                    appearance="outline"
+                  >
+                    <mat-label>Password Confirmation</mat-label>
+                    <input
+                      matInput
+                      formControlName="password_confirmation"
+                      type="password"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+                  <button
+                    class="btn-space"
+                    [disabled]="!registerForm.valid"
+                    mat-raised-button
+                    color="primary"
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                  <button type="button" mat-raised-button color="warn">
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

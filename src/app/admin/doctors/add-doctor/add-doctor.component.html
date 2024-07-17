@@ -1,0 +1,235 @@
+<section class="content">
+  <div class="content-block">
+    <div class="block-header">
+      <!-- breadcrumb -->
+      <app-breadcrumb
+        [title]="'Add Doctor'"
+        [items]="['Doctors']"
+        [active_item]="'Add Doctor'"
+      ></app-breadcrumb>
+    </div>
+    <div class="row clearfix">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+          <div class="header">
+            <h2>Add Doctor</h2>
+          </div>
+          <div class="body">
+            <form class="m-4" [formGroup]="docForm" (ngSubmit)="onSubmit()">
+              <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field
+                    class="example-full-width mb-3"
+                    appearance="outline"
+                  >
+                    <mat-label>Name in English</mat-label>
+                    <input matInput formControlName="nameEn" required />
+                    <mat-error
+                      *ngIf="docForm.get('nameEn')?.hasError('required')"
+                    >
+                      name is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field
+                    class="example-full-width mb-3"
+                    appearance="outline"
+                  >
+                    <mat-label>Name in Arabic</mat-label>
+                    <input matInput formControlName="nameAr" required />
+                    <mat-error
+                      *ngIf="docForm.get('nameAr')?.hasError('required')"
+                    >
+                      name is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field
+                    class="example-full-width mb-3"
+                    appearance="outline"
+                  >
+                    <mat-label>Fee in English</mat-label>
+                    <input matInput formControlName="feeEn" required />
+                    <mat-error
+                      *ngIf="docForm.get('feeEn')?.hasError('required')"
+                    >
+                      fee is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field
+                    class="example-full-width mb-3"
+                    appearance="outline"
+                  >
+                    <mat-label>Fee in Arabic</mat-label>
+                    <input matInput formControlName="feeAr" required />
+                    <mat-error
+                      *ngIf="docForm.get('feeAr')?.hasError('required')"
+                    >
+                      fee is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field
+                    class="example-full-width mb-3"
+                    appearance="outline"
+                  >
+                    <mat-label>Waiting time in minutes</mat-label>
+                    <input matInput formControlName="waiting" required />
+                    <mat-error
+                      *ngIf="docForm.get('waiting')?.hasError('required')"
+                    >
+                      waiting is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field
+                    class="example-full-width mb-3"
+                    appearance="outline"
+                  >
+                    <mat-label>title in English </mat-label>
+                    <input matInput formControlName="titleEn" required />
+                    <mat-error
+                      *ngIf="docForm.get('titleEn')?.hasError('required')"
+                    >
+                      title is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field
+                    class="example-full-width mb-3"
+                    appearance="outline"
+                  >
+                    <mat-label>Title in Arabic</mat-label>
+                    <input matInput formControlName="titleAr" required />
+                    <mat-error
+                      *ngIf="docForm.get('titleAr')?.hasError('required')"
+                    >
+                      title is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field
+                    class="example-full-width mb-3"
+                    appearance="outline"
+                  >
+                    <mat-label> Center Id </mat-label>
+                    <input
+                      matInput
+                      formControlName="health_center_id"
+                      required
+                    />
+                    <mat-error
+                      *ngIf="
+                        docForm.get('health_center_id')?.hasError('required')
+                      "
+                    >
+                      center is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field
+                    class="example-full-width mb-3"
+                    appearance="outline"
+                  >
+                    <mat-label>Enter Specialty id</mat-label>
+                    <input
+                      matInput
+                      formControlName="specialization_id"
+                      required
+                    />
+                    <mat-error
+                      *ngIf="
+                        docForm.get('specialization_id')?.hasError('required')
+                      "
+                    >
+                      specialty is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field
+                    class="example-full-width mb-3"
+                    appearance="outline"
+                  >
+                    <mat-label>Address In English</mat-label>
+                    <textarea
+                      matInput
+                      formControlName="addressEn"
+                      required
+                    ></textarea>
+                    <mat-error
+                      *ngIf="docForm.get('addressEn')?.hasError('required')"
+                    >
+                      address is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field
+                    class="example-full-width mb-3"
+                    appearance="outline"
+                  >
+                    <mat-label>Address In Arabic</mat-label>
+                    <textarea
+                      matInput
+                      formControlName="addressAr"
+                      required
+                    ></textarea>
+                    <mat-error
+                      *ngIf="docForm.get('addressAr')?.hasError('required')"
+                    >
+                      address is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-5">
+                  <label>Upload</label>
+                  <app-file-upload formControlName="image"></app-file-upload>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+                  <button
+                    class="btn-space"
+                    [disabled]="!docForm.valid"
+                    mat-raised-button
+                    color="primary"
+                  >
+                    Submit
+                  </button>
+                  <button type="button" mat-raised-button color="warn">
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

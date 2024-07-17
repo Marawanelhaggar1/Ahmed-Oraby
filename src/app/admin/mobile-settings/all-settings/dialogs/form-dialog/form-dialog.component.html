@@ -1,0 +1,255 @@
+<div class="addContainer">
+  <div class="modalHeader">
+    <div class="editRowModal">
+      <div class="modalHeader clearfix">
+        <!-- <img [src]="doctors.image" alt="avatar" /> -->
+        <div class="modal-about">
+          {{ dialogTitle }}
+        </div>
+      </div>
+    </div>
+    <button
+      mat-icon-button
+      (click)="dialogRef.close()"
+      class="modal-close-button"
+      aria-label="Close dialog"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div mat-dialog-content>
+    <form class="register-form m-4" [formGroup]="doctorsForm">
+      <!-- (ngSubmit)="submit()" -->
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Name in English</mat-label>
+            <input matInput formControlName="name" required />
+            <mat-icon class="material-icons-two-tone color-icon p-3" matSuffix
+              >face</mat-icon
+            >
+            <mat-error *ngIf="doctorsForm.get('name')?.hasError('required')">
+              name is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Name in Arabic</mat-label>
+            <input matInput formControlName="nameAr" required />
+            <mat-icon class="material-icons-two-tone color-icon p-3" matSuffix
+              >face</mat-icon
+            >
+            <mat-error *ngIf="doctorsForm.get('nameAr')?.hasError('required')">
+              name is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2"></div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Instagram in English</mat-label>
+            <input matInput formControlName="instagram" type="text" />
+            <mat-icon class="material-icons-two-tone color-icon p-3" matSuffix
+              >instagram</mat-icon
+            >
+            <mat-error
+              *ngIf="doctorsForm.get('instagram')?.hasError('required')"
+            >
+              Instagram is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>WhatsApp Number </mat-label>
+            <input matInput formControlName="whatsApp" />
+            <mat-icon class="material-icons-two-tone color-icon p-3" matSuffix
+              >call</mat-icon
+            >
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Phone in English</mat-label>
+            <input matInput formControlName="phone" type="text" />
+            <mat-icon class="material-icons-two-tone color-icon p-3" matSuffix
+              >Phone</mat-icon
+            >
+            <mat-error *ngIf="doctorsForm.get('phone')?.hasError('required')">
+              Phone is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Phone in Arabic</mat-label>
+            <input matInput formControlName="phoneAr" required />
+            <mat-icon class="material-icons-two-tone color-icon p-3" matSuffix
+              >phone</mat-icon
+            >
+            <mat-error *ngIf="doctorsForm.get('phoneAr')?.hasError('required')">
+              Please enter a the Phone
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>WhatsApp Link </mat-label>
+            <input matInput formControlName="whatsAppLink" />
+            <mat-icon class="material-icons-two-tone color-icon p-3" matSuffix
+              >chat</mat-icon
+            >
+          </mat-form-field>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Facebook</mat-label>
+            <input matInput formControlName="facebook" type="text" />
+            <mat-icon class="material-icons-two-tone color-icon p-3" matSuffix
+              >facebook</mat-icon
+            >
+            <mat-error
+              *ngIf="doctorsForm.get('facebook')?.hasError('required')"
+            >
+              Facebook is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>tiktok </mat-label>
+            <input matInput formControlName="tiktok" />
+            <mat-icon class="material-icons-two-tone color-icon p-3" matSuffix
+              >tiktok</mat-icon
+            >
+          </mat-form-field>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>snapchat</mat-label>
+            <input matInput formControlName="snapchat" type="text" />
+            <mat-icon class="material-icons-two-tone color-icon p-3" matSuffix
+              >snapchat</mat-icon
+            >
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>linkedin </mat-label>
+            <input matInput formControlName="linkedin" />
+            <mat-icon class="material-icons-two-tone color-icon p-3" matSuffix
+              >linkedin</mat-icon
+            >
+          </mat-form-field>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>location link</mat-label>
+            <input matInput formControlName="location" type="text" />
+            <mat-icon class="material-icons-two-tone color-icon p-3" matSuffix
+              >location</mat-icon
+            >
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+          <mat-form-field class="example-full-width mb-3" appearance="outline">
+            <mat-label>email </mat-label>
+            <input matInput formControlName="email" required />
+            <mat-error *ngIf="doctorsForm.get('email')?.hasError('required')">
+              email is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+          <mat-form-field class="example-full-width mb-3" appearance="outline">
+            <mat-label>Address In English</mat-label>
+            <textarea matInput formControlName="address" required></textarea>
+            <mat-error *ngIf="doctorsForm.get('address')?.hasError('required')">
+              address is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+          <mat-form-field class="example-full-width mb-3" appearance="outline">
+            <mat-label>Address In Arabic</mat-label>
+            <textarea matInput formControlName="addressAr" required></textarea>
+            <mat-error
+              *ngIf="doctorsForm.get('addressAr')?.hasError('required')"
+            >
+              address is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div *ngIf="action === 'add'" class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-5">
+          <label>Upload logo ( jpeg,png,jpg,gif,svg|max:2048 )</label>
+          <app-file-upload formControlName="logo"></app-file-upload>
+        </div>
+      </div>
+
+      <div *ngIf="action === 'add'" class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-5">
+          <label>Upload background1 ( jpeg,png,jpg,gif,svg|max:2048 )</label>
+          <app-file-upload formControlName="background1"></app-file-upload>
+        </div>
+      </div>
+
+      <div *ngIf="action === 'add'" class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-5">
+          <label>Upload background2 ( jpeg,png,jpg,gif,svg|max:2048 )</label>
+          <app-file-upload formControlName="background2"></app-file-upload>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+          <div class="example-button-row">
+            <button
+              mat-raised-button
+              color="primary"
+              [disabled]="!doctorsForm.valid"
+              [mat-dialog-close]="1"
+              (click)="confirmAdd()"
+              type="submit"
+            >
+              Save
+            </button>
+            <button
+              mat-raised-button
+              color="warn"
+              tabindex="-1"
+              (click)="onNoClick()"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
