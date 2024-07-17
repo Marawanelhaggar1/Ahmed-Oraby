@@ -35,13 +35,13 @@ export class BookingService {
 
   get(): Observable<{ data: BookingModel[] }> {
     return this._http.get<{ data: BookingModel[] }>(
-      'https://hws1.axonbi.com/public/api/booking'
+      'https://getmedist.com/public/api/booking'
     );
   }
 
   post(body: BookingModel): Observable<BookingModel> {
     return this._http.post<BookingModel>(
-      'https://hws1.axonbi.com/public/api/booking',
+      'https://getmedist.com/public/api/booking',
       body,
       {
         headers: {
@@ -54,7 +54,7 @@ export class BookingService {
 
   updateCenter(body: BookingModel): Observable<BookingModel> {
     return this._http.put<BookingModel>(
-      'https://hws1.axonbi.com/public/api/booking',
+      'https://getmedist.com/public/api/booking',
       body,
       {
         headers: {
@@ -69,7 +69,7 @@ export class BookingService {
     console.log(id);
 
     this._http
-      .delete(`https://hws1.axonbi.com/public/api/booking/${id}`, {
+      .delete(`https://getmedist.com/public/api/booking/${id}`, {
         headers: {
           Authorization:
             'Bearer ' + JSON.parse(this._cookie.get('user')).data.token,

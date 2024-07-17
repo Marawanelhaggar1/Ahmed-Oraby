@@ -35,7 +35,7 @@ export class PicsServiceService {
 
   post(body: FormData): Observable<PicsModel> {
     return this._http.post<PicsModel>(
-      'https://hws1.axonbi.com/public/api/pics',
+      'https://getmedist.com/public/api/pics',
       body,
       {
         headers: {
@@ -47,7 +47,7 @@ export class PicsServiceService {
   }
   updateCenter(body: PicsModel): Observable<PicsModel> {
     return this._http.put<PicsModel>(
-      'https://hws1.axonbi.com/public/api/pics',
+      'https://getmedist.com/public/api/pics',
       body,
       {
         headers: {
@@ -62,7 +62,7 @@ export class PicsServiceService {
     console.log(id);
 
     this._http
-      .delete(`https://hws1.axonbi.com/public/api/pics/${id}`, {
+      .delete(`https://getmedist.com/public/api/pics/${id}`, {
         headers: {
           Authorization:
             'Bearer ' + JSON.parse(this._cookie.get('user')).data.token,
@@ -93,7 +93,7 @@ export class PicsServiceService {
 
   get(): Observable<{ data: PicsModel[] }> {
     return this._http.get<{ data: PicsModel[] }>(
-      'https://hws1.axonbi.com/public/api/pics'
+      'https://getmedist.com/public/api/pics'
     );
   }
 }

@@ -37,7 +37,7 @@ export class SettingService {
 
   createWebSettings(body: FormData): Observable<SettingWebModel> {
     return this._http.post<SettingWebModel>(
-      'https://hws1.axonbi.com/public/api/web/setting',
+      'https://getmedist.com/public/api/web/setting',
       body,
       {
         headers: {
@@ -50,7 +50,7 @@ export class SettingService {
 
   createMobileSettings(body: FormData): Observable<SettingModel> {
     return this._http.post<SettingModel>(
-      'https://hws1.axonbi.com/public/api/mobile/setting',
+      'https://getmedist.com/public/api/mobile/setting',
       body,
       {
         headers: {
@@ -63,7 +63,7 @@ export class SettingService {
 
   updateWebSettings(body: SettingWebModel): Observable<SettingWebModel> {
     return this._http.put<SettingWebModel>(
-      'https://hws1.axonbi.com/public/api/web/setting',
+      'https://getmedist.com/public/api/web/setting',
       body,
       {
         headers: {
@@ -76,7 +76,7 @@ export class SettingService {
 
   updateMobileSettings(body: SettingModel): Observable<SettingModel> {
     return this._http.put<SettingModel>(
-      'https://hws1.axonbi.com/public/api/mobile/setting',
+      'https://getmedist.com/public/api/mobile/setting',
       body,
       {
         headers: {
@@ -91,7 +91,7 @@ export class SettingService {
     console.log(id);
 
     this._http
-      .delete(`https://hws1.axonbi.com/public/api/web/setting/${id}`, {
+      .delete(`https://getmedist.com/public/api/web/setting/${id}`, {
         headers: {
           Authorization:
             'Bearer ' + JSON.parse(this._cookie.get('user')).data.token,
@@ -124,7 +124,7 @@ export class SettingService {
     console.log(id);
 
     this._http
-      .delete(`https://hws1.axonbi.com/public/api/mobile/setting/${id}`, {
+      .delete(`https://getmedist.com/public/api/mobile/setting/${id}`, {
         headers: {
           Authorization:
             'Bearer ' + JSON.parse(this._cookie.get('user')).data.token,
@@ -155,7 +155,7 @@ export class SettingService {
 
   getCounter(): Observable<any> {
     return this._http.get<any>(
-      'https://hws1.axonbi.com/public/api/web/setting/count'
+      'https://getmedist.com/public/api/web/setting/count'
     );
   }
 }

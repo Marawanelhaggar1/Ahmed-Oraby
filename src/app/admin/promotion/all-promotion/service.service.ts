@@ -27,7 +27,7 @@ export class ServiceService extends UnsubscribeOnDestroyAdapter {
   getAllDoctorss(): void {
     this.subs.sink = this.httpClient
       .get<{ data: PromotionModel[] }>(
-        'https://hws1.axonbi.com/public/api/promotion?lang=admin'
+        'https://getmedist.com/public/api/promotion?lang=admin'
       )
       .subscribe({
         next: (data) => {

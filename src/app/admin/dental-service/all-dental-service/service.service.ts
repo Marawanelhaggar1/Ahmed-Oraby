@@ -29,7 +29,7 @@ export class ServiceService extends UnsubscribeOnDestroyAdapter {
   getAllDoctorss(): void {
     this.subs.sink = this.httpClient
       .get<{ data: DentalServices[] }>(
-        'https://hws1.axonbi.com/public/api/dental?lang=admin'
+        'https://getmedist.com/public/api/dental?lang=admin'
       )
       .subscribe({
         next: (data) => {

@@ -35,7 +35,7 @@ export class ServicesService {
 
   post(body: FormData): Observable<ServiceModel> {
     return this._http.post<ServiceModel>(
-      'https://hws1.axonbi.com/public/api/service',
+      'https://getmedist.com/public/api/service',
       body,
       {
         headers: {
@@ -47,7 +47,7 @@ export class ServicesService {
   }
   updateCenter(body: ServiceModel): Observable<ServiceModel> {
     return this._http.put<ServiceModel>(
-      'https://hws1.axonbi.com/public/api/service',
+      'https://getmedist.com/public/api/service',
       body,
       {
         headers: {
@@ -62,7 +62,7 @@ export class ServicesService {
     console.log(id);
 
     this._http
-      .delete(`https://hws1.axonbi.com/public/api/service/${id}`, {
+      .delete(`https://getmedist.com/public/api/service/${id}`, {
         headers: {
           Authorization:
             'Bearer ' + JSON.parse(this._cookie.get('user')).data.token,
@@ -93,12 +93,12 @@ export class ServicesService {
 
   getIcons(): Observable<{ data: { id: number; image: string }[] }> {
     return this._http.get<{ data: { id: number; image: string }[] }>(
-      'https://hws1.axonbi.com/public/api/icons'
+      'https://getmedist.com/public/api/icons'
     );
   }
   get(): Observable<{ data: ServiceModel[] }> {
     return this._http.get<{ data: ServiceModel[] }>(
-      'https://hws1.axonbi.com/public/api/service'
+      'https://getmedist.com/public/api/service'
     );
   }
 }

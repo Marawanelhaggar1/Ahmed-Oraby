@@ -28,7 +28,7 @@ export class ServiceService extends UnsubscribeOnDestroyAdapter {
   /** CRUD METHODS */
   getAllDoctorss(): void {
     this.subs.sink = this.httpClient
-      .get<UserModel[]>('https://hws1.axonbi.com/public/api/auth')
+      .get<UserModel[]>('https://getmedist.com/public/api/auth')
       .subscribe({
         next: (data) => {
           this.isTblLoading = false;
@@ -58,7 +58,7 @@ export class ServiceService extends UnsubscribeOnDestroyAdapter {
     this.dialogData = centers;
 
     this.httpClient
-      .put('http://hws1.axonbi.com/public/api/area', centers)
+      .put('https://getmedist.com/public/api/area', centers)
       .subscribe({
         next: (data) => {
           this.dialogData = centers;

@@ -36,7 +36,7 @@ export class SpecialtyService {
 
   post(body: Specialty): Observable<Specialty> {
     return this._http.post<Specialty>(
-      'https://hws1.axonbi.com/public/api/specialization',
+      'https://getmedist.com/public/api/specialization',
       body,
       {
         headers: {
@@ -49,19 +49,19 @@ export class SpecialtyService {
 
   get(): Observable<{ data: Specialty[] }> {
     return this._http.get<{ data: Specialty[] }>(
-      'https://hws1.axonbi.com/public/api/specialization/admin'
+      'https://getmedist.com/public/api/specialization/admin'
     );
   }
 
   getIcons(): Observable<{ data: { id: number; image: string }[] }> {
     return this._http.get<{ data: { id: number; image: string }[] }>(
-      'https://hws1.axonbi.com/public/api/icons'
+      'https://getmedist.com/public/api/icons'
     );
   }
 
   updateCenter(body: Specialty): Observable<Specialty> {
     return this._http.put<Specialty>(
-      'https://hws1.axonbi.com/public/api/specialization',
+      'https://getmedist.com/public/api/specialization',
       body,
       {
         headers: {
@@ -74,7 +74,7 @@ export class SpecialtyService {
 
   getBySpecialty(specialtyId: number): Observable<{ data: Doctor[] }> {
     return this._http.get<{ data: Doctor[] }>(
-      `https://hws1.axonbi.com/public/api/doctors/specialty/${specialtyId}`
+      `https://getmedist.com/public/api/doctors/specialty/${specialtyId}`
     );
   }
 
@@ -82,7 +82,7 @@ export class SpecialtyService {
     console.log(id);
 
     this._http
-      .delete(`https://hws1.axonbi.com/public/api/specialization/${id}`, {
+      .delete(`https://getmedist.com/public/api/specialization/${id}`, {
         headers: {
           Authorization:
             'Bearer ' + JSON.parse(this._cookie.get('user')).data.token,

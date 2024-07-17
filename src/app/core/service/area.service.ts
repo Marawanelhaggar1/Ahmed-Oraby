@@ -36,19 +36,19 @@ export class AreaService {
 
   get(): Observable<{ data: Area[] }> {
     return this._http.get<{ data: Area[] }>(
-      'https://hws1.axonbi.com/public/api/area/admin'
+      'https://getmedist.com/public/api/area/admin'
     );
   }
 
   getCentersByArea(areaId: number): Observable<{ data: CenterModel[] }> {
     return this._http.get<{ data: CenterModel[] }>(
-      `https://hws1.axonbi.com/public/api/center/area/${areaId}`
+      `https://getmedist.com/public/api/center/area/${areaId}`
     );
   }
 
   post(body: Area): Observable<Area> {
     return this._http.post<Area>(
-      'https://hws1.axonbi.com/public/api/area',
+      'https://getmedist.com/public/api/area',
       body,
       {
         headers: {
@@ -60,23 +60,19 @@ export class AreaService {
   }
 
   updateCenter(body: Area): Observable<Area> {
-    return this._http.put<Area>(
-      'https://hws1.axonbi.com/public/api/area',
-      body,
-      {
-        headers: {
-          Authorization:
-            'Bearer ' + JSON.parse(this._cookie.get('user')).data.token,
-        },
-      }
-    );
+    return this._http.put<Area>('https://getmedist.com/public/api/area', body, {
+      headers: {
+        Authorization:
+          'Bearer ' + JSON.parse(this._cookie.get('user')).data.token,
+      },
+    });
   }
 
   deleteCenters(id: number): void {
     console.log(id);
 
     this._http
-      .delete(`https://hws1.axonbi.com/public/api/area/${id}`, {
+      .delete(`https://getmedist.com/public/api/area/${id}`, {
         headers: {
           Authorization:
             'Bearer ' + JSON.parse(this._cookie.get('user')).data.token,

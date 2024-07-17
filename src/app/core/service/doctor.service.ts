@@ -36,13 +36,13 @@ export class DoctorService {
 
   get(): Observable<{ data: Doctors[] }> {
     return this._http.get<{ data: Doctors[] }>(
-      'https://hws1.axonbi.com/public/api/doctors/admin'
+      'https://getmedist.com/public/api/doctors/admin'
     );
   }
 
   postDoctor(body: FormData): Observable<Doctor> {
     return this._http.post<Doctor>(
-      'https://hws1.axonbi.com/public/api/doctors',
+      'https://getmedist.com/public/api/doctors',
       body,
       {
         headers: {
@@ -55,7 +55,7 @@ export class DoctorService {
 
   updateDoctor(body: Doctor): Observable<Doctor> {
     return this._http.put<Doctor>(
-      'https://hws1.axonbi.com/public/api/doctors',
+      'https://getmedist.com/public/api/doctors',
       body,
       {
         headers: {
@@ -70,7 +70,7 @@ export class DoctorService {
     console.log(id);
 
     this._http
-      .delete(`https://hws1.axonbi.com/public/api/doctors/${id}`, {
+      .delete(`https://getmedist.com/public/api/doctors/${id}`, {
         headers: {
           Authorization:
             'Bearer ' + JSON.parse(this._cookie.get('user')).data.token,

@@ -35,7 +35,7 @@ export class FeedbackServiceService {
 
   post(body: FormData): Observable<FeedbackModel> {
     return this._http.post<FeedbackModel>(
-      'https://hws1.axonbi.com/public/api/feedback',
+      'https://getmedist.com/public/api/feedback',
       body,
       {
         headers: {
@@ -47,7 +47,7 @@ export class FeedbackServiceService {
   }
   updateCenter(body: FeedbackModel): Observable<FeedbackModel> {
     return this._http.put<FeedbackModel>(
-      'https://hws1.axonbi.com/public/api/feedback',
+      'https://getmedist.com/public/api/feedback',
       body,
       {
         headers: {
@@ -62,7 +62,7 @@ export class FeedbackServiceService {
     console.log(id);
 
     this._http
-      .delete(`https://hws1.axonbi.com/public/api/feedback/${id}`, {
+      .delete(`https://getmedist.com/public/api/feedback/${id}`, {
         headers: {
           Authorization:
             'Bearer ' + JSON.parse(this._cookie.get('user')).data.token,
@@ -93,7 +93,7 @@ export class FeedbackServiceService {
 
   get(): Observable<{ data: FeedbackModel[] }> {
     return this._http.get<{ data: FeedbackModel[] }>(
-      'https://hws1.axonbi.com/public/api/feedback'
+      'https://getmedist.com/public/api/feedback'
     );
   }
 }

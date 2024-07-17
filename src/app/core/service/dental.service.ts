@@ -34,7 +34,7 @@ export class DentalService {
 
   post(body: FormData): Observable<DentalServices> {
     return this._http.post<DentalServices>(
-      'https://hws1.axonbi.com/public/api/dental',
+      'https://getmedist.com/public/api/dental',
       body,
       {
         headers: {
@@ -46,7 +46,7 @@ export class DentalService {
   }
   updateCenter(body: DentalServices): Observable<DentalServices> {
     return this._http.put<DentalServices>(
-      'https://hws1.axonbi.com/public/api/dental',
+      'https://getmedist.com/public/api/dental',
       body,
       {
         headers: {
@@ -61,7 +61,7 @@ export class DentalService {
     console.log(id);
 
     this._http
-      .delete(`https://hws1.axonbi.com/public/api/dental/${id}`, {
+      .delete(`https://getmedist.com/public/api/dental/${id}`, {
         headers: {
           Authorization:
             'Bearer ' + JSON.parse(this._cookie.get('user')).data.token,
@@ -92,7 +92,7 @@ export class DentalService {
 
   get(): Observable<{ data: DentalServices[] }> {
     return this._http.get<{ data: DentalServices[] }>(
-      'https://hws1.axonbi.com/public/api/dental'
+      'https://getmedist.com/public/api/dental'
     );
   }
 }

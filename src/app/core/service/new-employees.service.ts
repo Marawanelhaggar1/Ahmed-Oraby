@@ -35,7 +35,7 @@ export class NewEmployeesService {
 
   post(body: FormData): Observable<NewEmployees> {
     return this._http.post<NewEmployees>(
-      'https://hws1.axonbi.com/public/api/new/employee',
+      'https://getmedist.com/public/api/new/employee',
       body,
       {
         headers: {
@@ -47,7 +47,7 @@ export class NewEmployeesService {
   }
   updateCenter(body: NewEmployees): Observable<NewEmployees> {
     return this._http.put<NewEmployees>(
-      'https://hws1.axonbi.com/public/api/new/employee',
+      'https://getmedist.com/public/api/new/employee',
       body,
       {
         headers: {
@@ -62,7 +62,7 @@ export class NewEmployeesService {
     console.log(id);
 
     this._http
-      .delete(`https://hws1.axonbi.com/public/api/new/employee/${id}`, {
+      .delete(`https://getmedist.com/public/api/new/employee/${id}`, {
         headers: {
           Authorization:
             'Bearer ' + JSON.parse(this._cookie.get('user')).data.token,
@@ -93,7 +93,7 @@ export class NewEmployeesService {
 
   get(): Observable<{ data: NewEmployees[] }> {
     return this._http.get<{ data: NewEmployees[] }>(
-      'https://hws1.axonbi.com/public/api/new/employee'
+      'https://getmedist.com/public/api/new/employee'
     );
   }
 }

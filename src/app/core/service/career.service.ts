@@ -35,7 +35,7 @@ export class CareerService {
 
   post(body: FormData): Observable<CareerModel> {
     return this._http.post<CareerModel>(
-      'https://hws1.axonbi.com/public/api/career',
+      'https://getmedist.com/public/api/career',
       body,
       {
         headers: {
@@ -47,7 +47,7 @@ export class CareerService {
   }
   updateCenter(body: CareerModel): Observable<CareerModel> {
     return this._http.put<CareerModel>(
-      'https://hws1.axonbi.com/public/api/career',
+      'https://getmedist.com/public/api/career',
       body,
       {
         headers: {
@@ -62,7 +62,7 @@ export class CareerService {
     console.log(id);
 
     this._http
-      .delete(`https://hws1.axonbi.com/public/api/career/${id}`, {
+      .delete(`https://getmedist.com/public/api/career/${id}`, {
         headers: {
           Authorization:
             'Bearer ' + JSON.parse(this._cookie.get('user')).data.token,

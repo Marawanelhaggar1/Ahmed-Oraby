@@ -25,7 +25,7 @@ export class AppointmentService extends UnsubscribeOnDestroyAdapter {
   getAllAppointments(): void {
     this.subs.sink = this.httpClient
       .get<{ data: Appointment[] }>(
-        'https://hws1.axonbi.com/public/api/center/calls?lang=admin'
+        'https://getmedist.com/public/api/center/calls?lang=admin'
       )
       .subscribe({
         next: (data) => {

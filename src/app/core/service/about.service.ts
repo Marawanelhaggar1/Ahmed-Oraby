@@ -35,13 +35,13 @@ export class AboutService {
 
   get(): Observable<{ data: AboutModel[] }> {
     return this._http.get<{ data: AboutModel[] }>(
-      'https://hws1.axonbi.com/public/api/about/us'
+      'https://getmedist.com/public/api/about/us'
     );
   }
 
   post(body: FormData): Observable<AboutModel> {
     return this._http.post<AboutModel>(
-      'https://hws1.axonbi.com/public/api/about/us',
+      'https://getmedist.com/public/api/about/us',
       body,
       {
         headers: {
@@ -54,7 +54,7 @@ export class AboutService {
 
   update(body: AboutModel): Observable<AboutModel> {
     return this._http.put<AboutModel>(
-      'https://hws1.axonbi.com/public/api/about/us',
+      'https://getmedist.com/public/api/about/us',
       body,
       {
         headers: {
@@ -69,7 +69,7 @@ export class AboutService {
     console.log(id);
 
     this._http
-      .delete(`https://hws1.axonbi.com/public/api/about/us/${id}`, {
+      .delete(`https://getmedist.com/public/api/about/us/${id}`, {
         headers: {
           Authorization:
             'Bearer ' + JSON.parse(this._cookie.get('user')).data.token,

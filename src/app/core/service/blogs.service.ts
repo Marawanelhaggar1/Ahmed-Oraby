@@ -34,7 +34,7 @@ export class BlogsService {
 
   post(body: FormData): Observable<FormData> {
     return this._http.post<FormData>(
-      'https://hws1.axonbi.com/public/api/blogs',
+      'https://getmedist.com/public/api/blogs',
       body,
       {
         headers: {
@@ -47,7 +47,7 @@ export class BlogsService {
 
   updateCenter(body: FormData): Observable<FormData> {
     return this._http.post<FormData>(
-      'https://hws1.axonbi.com/public/api/blogs',
+      'https://getmedist.com/public/api/blogs',
       body,
       {
         headers: {
@@ -62,7 +62,7 @@ export class BlogsService {
     console.log(id);
 
     this._http
-      .delete(`https://hws1.axonbi.com/public/api/blogs/${id}`, {
+      .delete(`https://getmedist.com/public/api/blogs/${id}`, {
         headers: {
           Authorization:
             'Bearer ' + JSON.parse(this._cookie.get('user')).data.token,

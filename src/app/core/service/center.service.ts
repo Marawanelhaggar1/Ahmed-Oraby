@@ -22,7 +22,7 @@ export class CenterService {
 
   postCenter(body: FormData): Observable<Center> {
     return this._http.post<Center>(
-      'https://hws1.axonbi.com/public/api/center',
+      'https://getmedist.com/public/api/center',
       body,
       {
         headers: {
@@ -35,13 +35,13 @@ export class CenterService {
 
   get(): Observable<{ data: Center[] }> {
     return this._http.get<{ data: Center[] }>(
-      'https://hws1.axonbi.com/public/api/center/admin'
+      'https://getmedist.com/public/api/center/admin'
     );
   }
 
   updateCenter(body: Center): Observable<Center> {
     return this._http.put<Center>(
-      'https://hws1.axonbi.com/public/api/center',
+      'https://getmedist.com/public/api/center',
       body,
       {
         headers: {
@@ -70,7 +70,7 @@ export class CenterService {
     console.log(id);
 
     this._http
-      .delete(`https://hws1.axonbi.com/public/api/center/${id}`, {
+      .delete(`https://getmedist.com/public/api/center/${id}`, {
         headers: {
           Authorization:
             'Bearer ' + JSON.parse(this._cookie.get('user')).data.token,
@@ -101,7 +101,7 @@ export class CenterService {
 
   getByCenter(centerId: number): Observable<{ data: Doctor[] }> {
     return this._http.get<{ data: Doctor[] }>(
-      `https://hws1.axonbi.com/public/api/doctors/center/${centerId}`
+      `https://getmedist.com/public/api/doctors/center/${centerId}`
     );
   }
 }

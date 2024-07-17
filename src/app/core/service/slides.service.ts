@@ -35,7 +35,7 @@ export class SlidesService {
 
   post(body: FormData): Observable<Slide> {
     return this._http.post<Slide>(
-      'https://hws1.axonbi.com/public/api/slides',
+      'https://getmedist.com/public/api/slides',
       body,
       {
         headers: {
@@ -47,7 +47,7 @@ export class SlidesService {
   }
   updateCenter(body: Slide): Observable<Slide> {
     return this._http.put<Slide>(
-      'https://hws1.axonbi.com/public/api/slides',
+      'https://getmedist.com/public/api/slides',
       body,
       {
         headers: {
@@ -62,7 +62,7 @@ export class SlidesService {
     console.log(id);
 
     this._http
-      .delete(`https://hws1.axonbi.com/public/api/slides/${id}`, {
+      .delete(`https://getmedist.com/public/api/slides/${id}`, {
         headers: {
           Authorization:
             'Bearer ' + JSON.parse(this._cookie.get('user')).data.token,

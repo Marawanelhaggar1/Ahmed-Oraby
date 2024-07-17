@@ -70,7 +70,7 @@ export class AuthService {
 
   get(): Observable<{ data: User }> {
     return this._Http.get<{ data: User }>(
-      'https://hws1.axonbi.com/public/api/user',
+      'https://getmedist.com/public/api/user',
       {
         headers: {
           Authorization:
@@ -82,7 +82,7 @@ export class AuthService {
 
   login(body: any): Observable<User> {
     return this._Http.post<User>(
-      'https://hws1.axonbi.com/public/api/auth/login',
+      'https://getmedist.com/public/api/auth/login',
       body
     );
   }
@@ -95,7 +95,7 @@ export class AuthService {
     });
 
     return this._Http.put<UserModel>(
-      'https://hws1.axonbi.com/public/api/auth/update/profile',
+      'https://getmedist.com/public/api/auth/update/profile',
       body,
       { headers }
     );
@@ -105,7 +105,7 @@ export class AuthService {
     console.log(id);
 
     this._Http
-      .delete(`https://hws1.axonbi.com/public/api/doctors/${id}`, {
+      .delete(`https://getmedist.com/public/api/doctors/${id}`, {
         headers: {
           Authorization:
             'Bearer ' + JSON.parse(this._Cookie.get('user')).data.token,
@@ -140,14 +140,14 @@ export class AuthService {
 
   register(body: UserModel): Observable<UserModel> {
     return this._Http.post<UserModel>(
-      'https://hws1.axonbi.com/public/api/auth/register',
+      'https://getmedist.com/public/api/auth/register',
       body
     );
   }
 
   // google(body: any): Observable<User> {
   //   return this._Http.post<User>(
-  //     'https://hws1.axonbi.com/public/api/auth/google',
+  //     'https://getmedist.com/public/api/auth/google',
   //     body
   //   );
   // }

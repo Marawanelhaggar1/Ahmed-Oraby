@@ -27,7 +27,7 @@ export class ServiceService extends UnsubscribeOnDestroyAdapter {
   getAllDoctorss(): void {
     this.subs.sink = this.httpClient
       .get<{ data: FeedbackModel[] }>(
-        'https://hws1.axonbi.com/public/api/feedback?lang=admin'
+        'https://getmedist.com/public/api/feedback?lang=admin'
       )
       .subscribe({
         next: (data) => {

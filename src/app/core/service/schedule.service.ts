@@ -35,7 +35,7 @@ export class ScheduleService {
 
   post(body: ScheduleModel): Observable<ScheduleModel> {
     return this._http.post<ScheduleModel>(
-      'https://hws1.axonbi.com/public/api/doctor/schedule',
+      'https://getmedist.com/public/api/doctor/schedule',
       body,
       {
         headers: {
@@ -47,7 +47,7 @@ export class ScheduleService {
   }
   updateCenter(body: ScheduleModel): Observable<ScheduleModel> {
     return this._http.put<ScheduleModel>(
-      'https://hws1.axonbi.com/public/api/doctor/schedule',
+      'https://getmedist.com/public/api/doctor/schedule',
       body,
       {
         headers: {
@@ -62,7 +62,7 @@ export class ScheduleService {
     console.log(id);
 
     this._http
-      .delete(`https://hws1.axonbi.com/public/api/doctor/schedule/${id}`, {
+      .delete(`https://getmedist.com/public/api/doctor/schedule/${id}`, {
         headers: {
           Authorization:
             'Bearer ' + JSON.parse(this._cookie.get('user')).data.token,

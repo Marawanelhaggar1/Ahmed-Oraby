@@ -35,7 +35,7 @@ export class SubServiceService {
 
   post(body: SubService): Observable<SubService> {
     return this._http.post<SubService>(
-      'https://hws1.axonbi.com/public/api/service/group',
+      'https://getmedist.com/public/api/service/group',
       body,
       {
         headers: {
@@ -47,7 +47,7 @@ export class SubServiceService {
   }
   updateCenter(body: SubService): Observable<SubService> {
     return this._http.put<SubService>(
-      'https://hws1.axonbi.com/public/api/service/group',
+      'https://getmedist.com/public/api/service/group',
       body,
       {
         headers: {
@@ -62,7 +62,7 @@ export class SubServiceService {
     console.log(id);
 
     this._http
-      .delete(`https://hws1.axonbi.com/public/api/service/group/${id}`, {
+      .delete(`https://getmedist.com/public/api/service/group/${id}`, {
         headers: {
           Authorization:
             'Bearer ' + JSON.parse(this._cookie.get('user')).data.token,

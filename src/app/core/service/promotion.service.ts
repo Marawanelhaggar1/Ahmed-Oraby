@@ -35,7 +35,7 @@ export class PromotionService {
 
   post(body: FormData): Observable<PromotionModel> {
     return this._http.post<PromotionModel>(
-      'https://hws1.axonbi.com/public/api/promotion',
+      'https://getmedist.com/public/api/promotion',
       body,
       {
         headers: {
@@ -47,7 +47,7 @@ export class PromotionService {
   }
   updateCenter(body: PromotionModel): Observable<PromotionModel> {
     return this._http.put<PromotionModel>(
-      'https://hws1.axonbi.com/public/api/promotion',
+      'https://getmedist.com/public/api/promotion',
       body,
       {
         headers: {
@@ -62,7 +62,7 @@ export class PromotionService {
     console.log(id);
 
     this._http
-      .delete(`https://hws1.axonbi.com/public/api/promotion/${id}`, {
+      .delete(`https://getmedist.com/public/api/promotion/${id}`, {
         headers: {
           Authorization:
             'Bearer ' + JSON.parse(this._cookie.get('user')).data.token,
@@ -93,7 +93,7 @@ export class PromotionService {
 
   get(): Observable<{ data: PromotionModel[] }> {
     return this._http.get<{ data: PromotionModel[] }>(
-      'https://hws1.axonbi.com/public/api/promotion'
+      'https://getmedist.com/public/api/promotion'
     );
   }
 }
